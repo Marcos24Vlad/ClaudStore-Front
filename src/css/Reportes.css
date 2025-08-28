@@ -1,0 +1,433 @@
+/* ===== Reportes.css ===== */
+/* ====== Variables CSS ====== */
+:root {
+  /* Colores principales */
+  --primary-dark: #2c3e50;
+  --primary-light: #3498db;
+  --background: #ecf0f1;
+  --text-primary: #34495e;
+  --text-light: #7f8c8d;
+  --white: #ffffff;
+
+  /* Colores de estado */
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+
+  /* Sombras */
+  --shadow-light: 0 2px 8px rgba(44, 62, 80, 0.08);
+  --shadow-medium: 0 4px 16px rgba(44, 62, 80, 0.12);
+  --shadow-heavy: 0 8px 32px rgba(44, 62, 80, 0.16);
+
+  /* Espaciado */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Transiciones */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ===== ESTILOS ORIGINALES PARA DESKTOP ===== */
+.reportes-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: transparent;
+}
+
+.reportes-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.reportes-container h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* ==== Filtros ==== */
+.reportes-container .filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.reportes-container .filtros select,
+.reportes-container .filtros button,
+.reportes-container .filtros input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  background: #fff;
+  color: #333;
+}
+
+.reportes-container .filtros select:focus,
+.reportes-container .filtros input:focus {
+  outline: none;
+  border-color: #8884d8;
+  box-shadow: 0 0 4px rgba(136, 132, 216, 0.4);
+}
+
+.reportes-container .filtros button {
+  background: #8884d8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.reportes-container .filtros button:hover {
+  background: #6b5fc0;
+}
+
+.reportes-container .filtros .btn-reset {
+  background: #e74c3c;
+}
+
+.reportes-container .filtros .btn-reset:hover {
+  background: #c0392b;
+}
+
+/* ==== Cards ==== */
+.reportes-container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reportes-container .card {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+  color: #333;
+}
+
+.reportes-container .card:hover {
+  transform: translateY(-3px);
+}
+
+/* ==== Gráficos ==== */
+.reportes-container .recharts-wrapper {
+  margin: auto;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== 🌙 Modo oscuro ===== */
+.dark .reportes-container {
+  color: #f0f0f0;
+}
+
+.dark .reportes-container h1,
+.dark .reportes-container h2 {
+  color: #f0f0f0;
+}
+
+.dark .reportes-container .filtros select,
+.dark .reportes-container .filtros input {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.dark .reportes-container .filtros button {
+  background: #555;
+  color: #fff;
+}
+
+.dark .reportes-container .filtros button:hover {
+  background: #777;
+}
+
+.dark .reportes-container .filtros .btn-reset {
+  background: #c0392b;
+}
+
+.dark .reportes-container .filtros .btn-reset:hover {
+  background: #e74c3c;
+}
+
+.dark .reportes-container .card {
+  background: #1e1e1e;
+  color: #eee;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+.dark .reportes-container .recharts-wrapper {
+  background: #2a2a2a;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+/* ===== MEJORAS ESPECÍFICAS PARA MÓVILES ===== */
+
+/* Contenedor para scroll horizontal en gráficos móviles */
+.chart-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Scroll personalizado para móviles */
+.chart-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.chart-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.chart-container::-webkit-scrollbar-thumb {
+  background: #8884d8;
+  border-radius: 3px;
+}
+
+.chart-container::-webkit-scrollbar-thumb:hover {
+  background: #6b5fc0;
+}
+
+/* ===== ESTILOS PARA CALENDARIO ===== */
+
+/* Contenedor del input de fecha */
+.reportes-container .filtros input[type="date"],
+.reportes-container .filtros input[type="datetime-local"] {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Estilos base para el calendario */
+.reportes-container
+  .filtros
+  input[type="date"]::-webkit-calendar-picker-indicator,
+.reportes-container
+  .filtros
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+/* ===== MEDIA QUERIES SOLO PARA MÓVILES ===== */
+
+/* Móviles en vertical (hasta 768px) */
+@media (max-width: 768px) {
+  /* Contenedor principal */
+  .reportes-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  /* Títulos más pequeños en móvil */
+  .reportes-container h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .reportes-container h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Filtros en columna en móvil */
+  .reportes-container .filtros {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reportes-container .filtros select,
+  .reportes-container .filtros button,
+  .reportes-container .filtros input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    min-height: 48px; /* Mínimo para touch */
+    box-sizing: border-box;
+  }
+
+  /* Mejoras específicas para inputs de fecha en móvil */
+  .reportes-container .filtros input[type="date"],
+  .reportes-container .filtros input[type="datetime-local"] {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    min-height: 52px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .reportes-container .filtros input[type="date"]:focus,
+  .reportes-container .filtros input[type="datetime-local"]:focus {
+    border-color: #8884d8;
+    box-shadow: 0 0 8px rgba(136, 132, 216, 0.6);
+    transform: scale(1.02);
+  }
+
+  /* Personalizar el indicador del calendario en móvil */
+  .reportes-container
+    .filtros
+    input[type="date"]::-webkit-calendar-picker-indicator,
+  .reportes-container
+    .filtros
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/%3E%3C/svg%3E")
+      center/contain no-repeat;
+    color: transparent;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Estilos para modo oscuro en móvil */
+  .dark .reportes-container .filtros input[type="date"],
+  .dark .reportes-container .filtros input[type="datetime-local"] {
+    background: #2a2a2a;
+    color: #eee;
+    border: 2px solid #555;
+  }
+
+  .dark .reportes-container .filtros input[type="date"]:focus,
+  .dark .reportes-container .filtros input[type="datetime-local"]:focus {
+    border-color: #8884d8;
+    box-shadow: 0 0 8px rgba(136, 132, 216, 0.8);
+  }
+
+  .dark
+    .reportes-container
+    .filtros
+    input[type="date"]::-webkit-calendar-picker-indicator,
+  .dark
+    .reportes-container
+    .filtros
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23eee' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/%3E%3C/svg%3E")
+      center/contain no-repeat;
+  }
+
+  /* Cards en columna en móvil */
+  .reportes-container .cards {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reportes-container .card {
+    width: 100%;
+    min-width: auto;
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Gráficos responsivos en móvil */
+  .reportes-container .recharts-wrapper {
+    width: 100% !important;
+    min-width: 300px;
+    padding: 0.8rem;
+    overflow-x: auto;
+  }
+
+  /* Asegurar que los gráficos no se corten */
+  .BarChart,
+  .LineChart {
+    min-width: 300px;
+  }
+}
+
+/* Móviles muy pequeños (hasta 480px) */
+@media (max-width: 480px) {
+  .reportes-container {
+    padding: 0.8rem;
+  }
+
+  .reportes-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .reportes-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .reportes-container .card {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .reportes-container .recharts-wrapper {
+    padding: 0.6rem;
+  }
+
+  /* Gráficos más pequeños en pantallas muy pequeñas */
+  .BarChart,
+  .LineChart {
+    min-width: 280px;
+  }
+}
+
+/* Tabletas en horizontal (769px - 1024px) - mantener diseño original */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .reportes-container .cards {
+    gap: 1.2rem;
+  }
+
+  .reportes-container .card {
+    min-width: 220px;
+  }
+}
+
+/* Desktop grande (1025px+) - mantener diseño original completamente */
+@media (min-width: 1025px) {
+  /* Todos los estilos originales se mantienen sin cambios */
+}
